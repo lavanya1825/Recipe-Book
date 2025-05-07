@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./img/favicon.png">
+    <style>
+        body {
+            background: black;
+            margin-top: 200px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        
+        #typing {
+            width: 0ch;
+            color: white;
+            float: left;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 4.392386530014641vw;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 5s steps(22) 1s infinite alternate;
+        }
+        
+        #typing span {
+            color: red;
+        }
+        
+        #crow {
+            float: left;
+            color: blue;
+            font-family: consolas;
+            font-weight: bold;
+            font-size: 4.392386530014641vw;
+            animation: crow 0.5s linear 0s infinite;
+        }
+        
+        @keyframes typing {
+            from {
+                width: 0ch;
+            }
+            to {
+                width: 22.5ch;
+            }
+        }
+        
+        @keyframes crow {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .OP {
+            color: blue !important;
+            font-size: 6.222547584187408vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="typing"><span class="PO"> I am Lavanya </span>
+        <BR/> <span class="OP">This is my project </span>
+    </div>
+    <div id="crow">|</div>
+    <script>
+    </script>
+
+</body>
+
+</html>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: #faf7f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: #d0210a;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .stage {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Change from flex-end to center */
+  background: #fff8f0;
+}
+
+.man-recipe-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  will-change: left;
+  left: -400px; /* Keep this for initial position */
+}
+  .man {
+    width: 130px;
+    height: 260px;
+    position: relative;
+  }
+  .walk-animation {
+    animation: walkBob 0.6s ease-in-out infinite;
+  }
+  @keyframes walkBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .head {
+    width: 56px;
+    height: 56px;
+    background: #f2c9ac;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
+  }
+  .body {
+    width: 78px;
+    height: 130px;
+    background: rgb(244, 8, 43);
+    margin: 10px auto 0;
+    border-radius: 36px 36px 18px 18px;
+    position: relative;
+  }
+  .legs {
+    display: flex;
+    justify-content: space-between;
+    width: 78px;
+    margin: 12px auto 0;
+    position: relative;
+    top: 0;
+  }
+  .leg {
+    width: 32px;
+    height: 86px;
+    background: #3b2f27;
+    border-radius: 26px;
+    transform-origin: top center;
+  }
+  .leg-left {
+    animation: legLeftMotion 0.6s ease-in-out infinite;
+  }
+  .leg-right {
+    animation: legRightMotion 0.6s ease-in-out infinite;
+  }
+  @keyframes legLeftMotion {
+    0%, 100% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+  }
+  @keyframes legRightMotion {
+    0%, 100% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+  }
+  .arms {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 48px;
+    pointer-events: none;
+  }
+  .arm-left,
+  .arm-right {
+    width: 32px;
+    height: 70px;
+    background: rgb(237, 41, 6);
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    transform-origin: top center;
+  }
+  .arm-left {
+    left: 0;
+    animation: armLeftSwing 0.6s ease-in-out infinite;
+  }
+  .arm-right {
+    right: 0;
+    animation: armRightSwing 0.6s ease-in-out infinite;
+  }
+  @keyframes armLeftSwing {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(15deg); }
+  }
+  @keyframes armRightSwing {
+    0%, 100% { transform: rotate(15deg); }
+    50% { transform: rotate(-10deg); }
+  }
+  .recipe-card {
+    width: 380px;
+    max-width: 90vw;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 35px rgba(212, 77, 58, 0.2);
+    padding: 1rem 1.5rem 2rem;
+    overflow-y: auto;
+    max-height: 260px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    user-select: none;
+  }
+  .recipe-card.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image-container {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+  .recipe-title {
+    font-size: 1.5rem;
+    color: #a03927;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #6b3d2f;
+    margin: 0.6rem 0 0.3rem;
+  }
+  ul.ingredients {
+    list-style: disc inside;
+    color: #555;
+    margin-bottom: 0.6rem;
+  }
+  ol.steps {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  .recipe-card::-webkit-scrollbar {
+    width: 6px;
+  }
+  .recipe-card::-webkit-scrollbar-thumb {
+    background-color: #d44d3a;
+    border-radius: 10px;
+  }
+  .recipe-card::-webkit-scrollbar-track {
+    background: #faf7f0;
+  }
+  @media (max-width: 500px) {
+    .man-recipe-wrapper {
+      bottom: 0;
+      left: -320px;
+    }
+    .man {
+      width: 100px;
+      height: 200px;
+    }
+    .arms {
+      width: 80px;
+      height: 38px;
+    }
+    .arm-left, .arm-right {
+      width: 25px;
+      height: 56px;
+    }
+    .legs {
+      width: 60px;
+    }
+    .leg {
+      width: 25px;
+      height: 66px;
+    }
+    .recipe-card {
+      width: 320px;
+      max-width: 90vw;
+      max-height: 220px;
+      padding: 0.8rem 1.2rem 1.4rem;
+    }
+    .recipe-title {
+      font-size: 1.3rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>Animated Man Bringing Some Recipes</header>
+<div class="stage" aria-live="polite" aria-atomic="true" aria-relevant="text">
+  <div class="man-recipe-wrapper" aria-label="Animated man presenting recipes">
+    <div class="man walk-animation" aria-hidden="true">
+      <div class="head"></div>
+      <div class="body"></div>
+      <div class="legs">
+        <div class="leg leg-left"></div>
+        <div class="leg leg-right"></div>
+      </div>
+      <div class="arms">
+        <div class="arm-left"></div>
+        <div class="arm-right"></div>
+      </div>
+    </div>
+    <div class="recipe-card" tabindex="0" role="region" aria-live="polite" aria-atomic="true">
+      <!-- Recipe content will appear here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  const recipes = [
+    {
+      title: "Hyderabad biryani",
+      image: "https://static.wixstatic.com/media/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg/v1/fill/w_666,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/91e241_475faa4fa56341f3878699dde5ab4904~mv2.jpg",
+      ingredients: [
+      "Rice: Basmati rice is the traditional choice.", 
+      "Meat: Chicken or mutton is typically used.",
+      "Marinade:",
+      "Yogurt (dahi).",
+      "Ginger-garlic paste.",
+      "Biryani masala (a blend of spices like cinnamon, cardamom, cloves, etc.).", 
+      "Chili powder, turmeric, lemon juice, and other spices. ",
+      "Other Ingredients:",
+      "Fried onions (birista).",
+      "Fresh coriander and mint leaves.", 
+      "Saffron (for color and aroma).", 
+      "Ghee (clarified butter). ",
+      "Bay leaves, green chilies." 
+      ],
+      steps: [
+      "Prepare the marinade: Combine yogurt, ginger-garlic paste, biryani masala, and other spices with the chicken or mutton. Marinate for at least 2 hours.", 
+      "Cook the rice: Partially cook basmati rice in boiling water with bay leaves and salt. ",
+      "Fry onions: Fry onions until golden brown and crispy (birista). ",
+      "Layer and cook: In a heavy-bottomed pot, layer the marinated meat, partially cooked rice, fried onions, fresh herbs, and saffron-infused milk.", 
+      "Dum cooking: Seal the pot with foil and a tight-fitting lid, or use a dough seal. Cook over low heat for about 30-40 minutes, allowing the flavors to meld.",
+      "Rest and serve: Let the biryani rest for at least 15 minutes after cooking before serving." 
+      ]
+    },
+    {
+      title: "Brinjal Curry",
+      image: "https://myfoodstory.com/wp-content/uploads/2022/08/Stuffed-Brinjal-Curry-6-500x500.jpg",
+      ingredients: [
+      "Brinjal (Eggplant): The main ingredient, usually sliced or cubed.",
+      "Onions: Provides a base for the curry and adds sweetness.",
+      "Tomatoes: Contribute to the sauce and add a slightly acidic flavor.",
+      "Spices: Commonly include cumin, coriander, turmeric, red chili powder, garam masala, and other spices for flavor.",
+      "Oil: For sautéing and cooking.",
+      "Garlic and Ginger: Add aromatic flavors.",
+      "Curry leaves: Adds a distinct aroma and flavor.",
+      "Coconut milk or water: Used to create a richer sauce.",
+      "Salt: For seasoning.",
+      "Optional: Mustard seeds, green chilies, and other spices can be added for variations." 
+      ],
+      steps: [
+      "Wash and cut brinjals; soak in salted water for 10–15 mins.",
+      "Heat oil, add mustard and cumin seeds, let them splutter.",
+      "Add curry leaves, green chilies, and chopped onions; sauté till golden.",
+      "Add ginger and garlic; cook for a minute.",
+      "Add chopped tomatoes; cook till soft.",
+      "Add turmeric, chili powder, coriander powder, and salt; mix well.",
+      "Add brinjals; stir to coat with masala.",
+      "Add water, cover, and cook till brinjals are tender.",
+      "Add garam masala; simmer for 2 more minutes.",
+      "Garnish with coriander and serve hot."
+      ]
+    },
+    {
+      title: "Andhra Chicken Curry",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaBdSdXfIMM6U43kg7uFh6i1qGhvnAOq915A&s",
+      ingredients: [
+      "Chicken (with bone) – 500g",
+      "Onions – 2 large, finely chopped",
+      "Tomatoes – 2 medium, chopped",
+      "Ginger-garlic paste – 1 tbsp",
+      "Green chilies – 2, slit",
+      "Coriander powder – 1½ tsp",
+      "Red chili powder – 1½ tsp (adjust to taste)",
+      "Turmeric powder – ½ tsp",
+      "Garam masala – ½ tsp",
+      "Fresh coriander leaves",
+      "Oil – 3 tbsp",
+      "Salt – to taste",
+      "Water – as needed",
+      "(Optional: curry leaves, poppy seeds or coconut paste for variation)"
+      ],
+      steps: [
+        "Heat oil in a pan, and sauté chopped onions until golden brown.",
+        "Add green chilies and ginger-garlic paste, and sauté until the raw smell disappears.",
+        "Add chopped tomatoes, and cook until they turn soft and oil starts to separate.",
+        "Mix in turmeric powder, red chili powder, coriander powder, and salt.",
+        "Add chicken pieces, and stir well to coat them with the masala.",
+        "Cover and cook on medium heat for 5–7 minutes, until the chicken releases moisture.",
+        "Pour in enough water for gravy, and simmer until the chicken is fully cooked and tender.",
+        "Sprinkle garam masala, and simmer for another 5 minutes for enhanced flavor.",
+        "Garnish with freshly chopped coriander leaves.",
+        "Serve hot with rice, roti, or Andhra-style pulao."
+      ]
+    },
+    {
+      title: "Gonura(sorrel) pickle",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFfSdqk3bmfIanc7XdqJ_d1UEWH_K8x5__VQ&s",
+      ingredients: [
+        "Gongura (sorrel) leaves – 2 cups (stems removed, washed)",
+        "Green chilies – 6 to 8 (adjust to taste)",
+        "Garlic cloves – 8 (4 for grinding, 4 for tempering)",
+        "Oil – 2 to 3 tbsp (preferably sesame oil)",
+        "Salt – to taste",
+        "Mustard seeds – 1 tsp",
+        "Urad dal – 1 tsp",
+        "Dried red chilies – 2, broken",
+        "Curry leaves – 1 sprig",
+        "Asafoetida (hing) – a pinch",
+      ],
+      steps: [
+        "Wash and dry 2 cups of gongura leaves, removing the stems.",
+        "Heat 1 tbsp oil, sauté gongura leaves until wilted, and set aside.",
+        "In the same pan, fry 6–8 green chilies and 4 garlic cloves in 1 tbsp oil until golden.",
+        "Grind the sautéed gongura, chilies, fried garlic, and salt into a coarse paste (no water).",
+        "Heat 1 tbsp oil, splutter 1 tsp mustard seeds, then add 1 tsp urad dal, 2 dried red chilies, curry leaves, a pinch of hing, and 4 crushed garlic cloves.",
+        "Pour tempering over the pachadi and mix well."
+      ]
+    },
+    {
+      title: "Classic Margherita Pizza",
+      image: "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400",
+      ingredients: [
+        "Pizza dough",
+        "Tomato sauce",
+        "Fresh mozzarella cheese",
+        "Fresh basil leaves",
+        "Olive oil"
+      ],
+      steps: [
+        "Preheat oven to 500°F (260°C) with pizza stone inside.",
+        "Roll out dough to desired thickness.",
+        "Spread tomato sauce evenly over dough.",
+        "Add mozzarella slices and basil leaves.",
+        "Drizzle olive oil and sprinkle salt.",
+        "Bake 8-10 mins until crust is golden.",
+        "Slice and serve."
+      ]
+    },
+    {
+      title: " Andhra Sambar ",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST8Y_x7NBJKuAxYgs6BtqKbB9ryoNWSdQkBg&s",
+      ingredients: [
+        "Toor dal (pigeon peas) – ½ cup",
+"Tamarind – lemon-sized ball (or 1 tbsp paste)",
+"Mixed vegetables – 1 to 1½ cups (carrot, drumstick, brinjal, pumpkin, etc.)",
+"Tomato – 1, chopped",
+"Green chilies – 2, slit",
+"Turmeric powder – ¼ tsp",
+"Salt – to taste",
+"Sambar powder – 2 tbsp (adjust to taste)",
+"Coriander leaves – for garnish",
+"Water – as needed",
+"Oil or ghee – 1½ tbsp",
+"Mustard seeds – 1 tsp",
+"Cumin seeds – ½ tsp (optional)",
+"Dried red chilies – 2",
+"Curry leaves – 1 sprig",
+"Asafoetida (hing) – a pinch"
+      ],
+      steps: [
+        "Wash ½ cup toor dal and pressure cook with 2 cups water and ¼ tsp turmeric until soft and mushy.",
+"Soak tamarind in warm water for 10 minutes, then extract juice (or mix paste in ½ cup water).",
+"Boil chopped vegetables and green chilies in water until tender.",
+"Add tamarind juice, salt, and 2 tbsp sambar powder to the cooked vegetables; simmer for 5–7 minutes.",
+"Mash the cooked dal and add it to the simmering mixture; adjust water and boil for 5–10 minutes.",
+"In a small pan, heat oil/ghee, splutter mustard seeds, add cumin seeds, red chilies, curry leaves, and hing.",
+"Pour the tempering into the sambar and mix well.",
+"Garnish with chopped coriander leaves and serve hot."
+      ]
+    },
+    {
+      title: "Mango pickle",
+      image: "https://i.pinimg.com/736x/30/3c/f9/303cf92eb2896d890059358a7dd6f4aa.jpg",
+      ingredients: [
+        "Raw mango – 4 cups (washed, dried, and cut into 1-inch cubes)",
+"Red chili powder – 1 cup (adjust to spice level)",
+"Mustard seeds – ½ cup (coarsely ground)",
+"Fenugreek seeds – 2 tsp (lightly roasted and ground)",
+"Salt – ¾ to 1 cup (adjust to taste and mango sourness)",
+"Turmeric powder – 2 tsp",
+"Gingelly (sesame) oil – 1 to 1½ cups",
+"Garlic cloves – 15 to 20 (optional, peeled)"
+      ],
+      steps: [
+        "Wash raw mangoes, wipe completely dry, cut into small cubes along with the hard inner shell, and sun-dry them for 1–2 hours if possible.",
+"In a clean, dry bowl, mix red chili powder, mustard powder, fenugreek powder, turmeric, and salt.",
+"Add mango pieces and garlic cloves to the spice mix and combine thoroughly until all pieces are well-coated.",
+"Pour gingelly oil over the mixture and stir until the oil covers all the mango pieces.",
+"Transfer the pickle to a sterilized glass or ceramic jar, pressing down the mangoes gently.",
+"Cover the jar with a clean lid and keep in a dry place at room temperature.",
+"Stir the pickle with a clean dry spoon once daily for 4–5 days until oil rises to the top and the mango softens slightly.",
+"Store in an airtight container and use a dry spoon every time; keeps well for months."
+      ]
+    },
+    {
+      title: "Vadapav",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuPSMPjRG2kST2a8kTAod9dnz2IhDsTivadQ&s",
+      ingredients: [
+      "For the Vada (Potato Filling):",
+
+" 2 large potatoes (boiled and mashed) ",
+" 1 tablespoon oil ",
+" 1 teaspoon mustard seeds ",
+" 1 teaspoon cumin seeds ",
+" 1 teaspoon turmeric powder ",
+" 1-2 green chilies (finely chopped) ",
+" 1 tablespoon ginger-garlic paste ",
+" 1 tablespoon lemon juice ",
+" Salt to taste ",
+" Fresh coriander leaves (chopped) ",
+"For the Batter:",
+" 1 cup besan (gram flour) ",
+" 1/2 teaspoon turmeric powder ",
+" 1/2 teaspoon red chili powder ",
+" Salt to taste ",
+" Water (as needed) ",
+"For Assembly:",
+" Pav (Indian bread rolls) ",
+" Green chutney (coriander and mint chutney) ",
+" Tamarind chutney (optional) ",
+" Fried green chilies (for serving) ",
+" Chaat masala (optional) ",
+      ],
+      steps: [
+        " Boil and mash potatoes. ",
+" Sauté mustard seeds, cumin seeds, green chilies, and ginger-garlic paste in oil. ",
+" Add turmeric, salt, lemon juice, and mashed potatoes; mix well. ",
+" Shape the mixture into small balls (vadas). ",
+" Prepare a batter with besan, turmeric, red chili powder, and water. ",
+" Dip each vada in the batter and fry until golden brown. ",
+" Slice pav rolls, spread green chutney and tamarind chutney inside. ",
+" Place a vada in the pav and optionally sprinkle chaat masala. ",
+" Serve with fried green chilies on the side. "
+      ]
+    },
+    {
+      title: "Dokla",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ8XciAfnsYVDuMjOhS4xA17gvwFM9S5uvlg&s",
+      ingredients: [
+ " 1 cup besan (gram flour) ",
+" 1/2 teaspoon turmeric powder ",
+" 1 teaspoon ginger paste ",
+" 1-2 green chilies (finely chopped) ",
+" 1 tablespoon lemon juice ",
+" 1 teaspoon sugar ",
+" Salt to taste ",
+" 1 teaspoon ENO fruit salt (or baking soda) ",
+" Water (as needed) ",
+" 1 tablespoon oil ",
+" 1 teaspoon mustard seeds ",
+" 1 teaspoon sesame seeds ",
+" 1-2 green chilies (slit) ",
+" Fresh coriander leaves (for garnish) ",
+" Green chutney ",
+" Sweet tamarind chutney "
+      ],
+      steps: [
+        " In a bowl, mix besan, turmeric powder, ginger paste, green chilies, lemon juice, sugar, and salt. ",
+" Gradually add water to make a smooth batter. ",
+" Add ENO fruit salt to the batter and mix gently. ",
+" Grease a steaming tray or plate and pour the batter into it. ",
+" Steam the batter for about 15-20 minutes until a toothpick comes out clean. ",
+" Once done, let it cool for a few minutes, then cut into squares or diamonds. ",
+" Heat oil in a pan, add mustard seeds, sesame seeds, and slit green chilies for tempering. ",
+" Pour the tempering over the steamed dhokla pieces. ",
+" Garnish with fresh coriander leaves. ",
+" Serve with green chutney and sweet tamarind chutney. ",
+      ]
+    },
+    {
+      title: "Bread Pakora",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_3tKRWzzMPItPrqRy1COsPm_OXfyZ26N9NA&s",
+      ingredients: [
+      "For the Filling:",
+" 2 large potatoes (boiled and mashed) ",
+" 1 teaspoon cumin seeds ",
+" 1-2 green chilies (finely chopped) ",
+" 1 teaspoon ginger paste ",
+" 1 teaspoon garam masala ",
+" 1 tablespoon lemon juice ",
+" Salt to taste ",
+" Fresh coriander leaves (chopped) ",
+" 1 cup besan (gram flour) ",
+" 1/2 teaspoon turmeric powder ",
+" 1/2 teaspoon red chili powder ",
+" Salt to taste ",
+" Water (as needed) ",
+"For Assembly:",
+" Bread slices (white or whole wheat) ",
+" Oil (for deep frying) "
+      ],
+      steps: [
+        " In a bowl, mix the boiled and mashed potatoes with cumin seeds, green chilies, ginger paste, garam masala, lemon juice, and salt. ",
+" Add chopped coriander leaves and mix well to form the filling. ",
+" Take a slice of bread, place a portion of the potato filling in the center, and cover with another slice of bread. ",
+" Cut the sandwich into halves or quarters as desired. ",
+" In another bowl, mix besan, turmeric powder, red chili powder, and salt; add water to make a smooth batter. ",
+" Heat oil in a deep frying pan over medium heat. ",
+" Dip each bread sandwich in the besan batter, ensuring it is well coated. ",
+" Carefully place the coated bread in the hot oil and fry until golden brown and crispy. ",
+" Remove and drain on paper towels to absorb excess oil. ",
+" Serve hot with green chutney and tamarind chutney. "
+      ]
+    },
+  ];
+
+  const manWrapper = document.querySelector('.man-recipe-wrapper');
+  const recipeCard = manWrapper.querySelector('.recipe-card');
+  const walkDuration = 4000; 
+  const holdDuration = 5000; 
+  let currentRecipe = 0;
+
+  function renderRecipe(index) {
+    const r = recipes[index];
+    recipeCard.innerHTML = `
+      <div class="image-container"><img src="${r.image}" alt="${r.title}"></div>
+      <h2 class="recipe-title">${r.title}</h2>
+      <h3 class="subtitle">Ingredients</h3>
+      <ul class="ingredients">${r.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+      <h3 class="subtitle">Preparation Steps</h3>
+      <ol class="steps">${r.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+    `;
+  }
+
+  function animateManWithRecipe() {
+    manWrapper.style.transition = 'none';
+    manWrapper.style.left = '-400px';
+    recipeCard.classList.remove('active');
+    renderRecipe(currentRecipe);
+    
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        manWrapper.style.transition = `left ${walkDuration}ms linear`;
+        manWrapper.style.left = 'calc(50% - 500px)';
+        setTimeout(() => {
+          recipeCard.classList.add('active');
+        }, walkDuration - 800);
+        setTimeout(() => {
+          recipeCard.classList.remove('active');
+          manWrapper.style.left = '110vw'; 
+          setTimeout(() => {
+            currentRecipe = (currentRecipe + 1) % recipes.length;
+            animateManWithRecipe();
+          }, walkDuration + 300);
+        }, walkDuration + holdDuration);
+      });
+    });
+  }
+  animateManWithRecipe();
+</script>
+</body>
+</html>
+
